@@ -27,30 +27,51 @@ const questions = [
 
 ]
 
-function listener(question, answer, span) {
+let heightQuestionContainer;
+let heightsVetor = [];
+
+function getHeightValue(question) {
+    for (var i = 1; i <= 2; i++) {
+        if (i == 1) {
+            question.style.overflow = "visible";
+            question.style.height = "auto";
+            heightQuestionContainer = question.clientHeight + 1;
+
+            heightsVetor.push(heightQuestionContainer);
+
+        } else {
+            question.style.overflow = "hidden";
+            question.style.height = "2.75rem";
+        }
+    }
+}
+
+
+for (i = 0; i < questions.length; i++) {
+    getHeightValue(questions[i].question);
+}
+
+
+function listener(question, answer, span, height) {
     question.addEventListener("click", () => {
         const styleConfirm = span.style.transform == "rotate(-180deg)";
+
         if (styleConfirm) {
             span.style.transform = "rotate(0)";
-            question.style.overflow = "hidden"
+            question.style.overflow = "hidden";
             question.style.height = "2.75rem";
+            answer.style.color = "hsl(240, 6%, 100%)";
         } else {
-             span.style.transform = "rotate(-180deg)";
+            span.style.transform = "rotate(-180deg)";
             question.style.overflow = "visible";
+            answer.style.color = "hsl(240, 6%, 50%)";
 
-            const hightQuestionContainer = (question) => { 
-                question.style.height = "auto";
-
-                return question.clientHeight.toFixed(2);
-            }
-            console.log(hightQuestionContainer);
-
-            question.style.height = hightQuestionContainer(question) + "px";
+            question.style.height = height + "px";
         }
 
     })
 }
 
 for (i = 0; i < questions.length; i++) {
-    listener(questions[i].question, questions[i].answer, questions[i].span);
+    listener(questions[i].question, questions[i].answer, questions[i].span, heightsVetor[i]);
 }
