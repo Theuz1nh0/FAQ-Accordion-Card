@@ -8,9 +8,10 @@ body {
     background-color: hsl(240, 73%, 65%);
     background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
     background-repeat: no-repeat;
-    padding-top: 3em;
     font-family: 'Kumbh Sans', sans-serif;
-    padding-top: 9em;
+    font-size: 0.72rem;
+    padding: 1.5rem;
+    padding-top: 9rem;
     height: 100vh;
 }
 
@@ -20,8 +21,8 @@ body {
     border-radius: 1.5em;
     background-color: white;
     margin: 0 auto;
-    padding: 0 1.5em 3em 1.5em;
-    width: 87.2%;
+    margin-bottom: 2em;
+    padding: 0 1.5rem 2.5rem 1.5rem;
 }
 
 .image-position {
@@ -30,6 +31,10 @@ body {
     height: 8.625em;
     top: -6.625em;
     width: 14.8em;
+}
+
+.after-icon {
+    transition: all 0.4s;
 }
 
 .after-icon::after {
@@ -44,21 +49,32 @@ body {
 
 .card-content h1 {
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
-.question-container {
+.questions-container {
     border-bottom: 1px solid hsl(240, 5%, 91%);
+    height: 2.75rem;
+    overflow: hidden;
+    transition: all 1s;
+    transform: translate(0);
+}
+
+
+
+.question-content {
+    color: hsl(240, 6%, 50%);
     display: flex;
-    font-size: 0.8em;
+    font-size: 0.8rem;
     font-weight: 400;
     justify-content: space-between;
-    padding: 1em 0;
+    padding: 1rem 0 0.75rem 0;
 }
 
-.answer-container {
-    font-size: 0.85em;
+.answer-content {
+    color: hsl(240, 6%, 50%);
     line-height: 1.7em;
+    padding: 0 2rem 1rem 0;
     word-spacing: 2px;
 }
 
@@ -67,10 +83,11 @@ body {
 }
 
 .attribution {
+    color: white;
     font-size: 11px;
     text-align: center;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: orange;
 }
