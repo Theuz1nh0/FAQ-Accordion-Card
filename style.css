@@ -7,7 +7,7 @@
 body {
     background-color: hsl(240, 73%, 65%);
     background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 0.72rem;
     padding: 1.5rem;
@@ -15,7 +15,10 @@ body {
     height: 100vh;
 }
 
- 
+main {
+    max-width: 57.5rem;
+}
+
 .card-container {
     border: 1px solid white;
     border-radius: 1.5em;
@@ -48,7 +51,6 @@ body {
 }
 
 .card-content h1 {
-    color: hsl(237, 12%, 33%);
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -73,16 +75,19 @@ body {
 }
 
 .answer-content {
-    color: hsl(240, 6%, 100%);
+    color: hsl(240, 6%, 50%, 0);
     line-height: 1.7em;
     padding: 0 2rem 1rem 0;
     transition: color 1s;
     word-spacing: 2px;
 }
 
-.display-off {
+.illustration-desktop,
+.bg-pattern-desktop,
+.illustration-box-desktop {
     display: none;
 }
+
 
 .attribution {
     color: white;
@@ -92,4 +97,72 @@ body {
 
 .attribution a {
     color: orange;
+}
+
+@media only screen and (min-width: 768px) {
+    main {
+        width: 57.5rem;
+        margin: 0 auto;
+    }
+
+    .card-container {
+        padding: 4.5rem 6.375rem 5.125rem 0;
+    }
+
+    .card {
+        display: flex;
+    }
+
+    .container-image {
+        width: 60%;
+    }
+
+    .card-content {
+        width: 40%;
+    }
+
+    .card-content h1 {
+        margin-bottom: 2rem;
+    }
+
+    .image-position {
+        position: relative;
+        top: 50%;
+        left: -18%;
+    }
+
+    .illustration-desktop {
+        bottom: 180%;
+        object-fit: cover;
+        object-position: right;
+        right: 43%;
+        position: relative;
+        height: 22.5rem;
+        width: 24.375rem;
+    }
+
+    .illustration-box-desktop {
+        bottom: 405%;
+        object-fit: cover;
+        object-position: top;
+        position: relative;
+        right: 120%;
+    }
+    
+    /* .image-position::after {
+        content:  url(./images/bg-pattern-desktop.svg);
+        position: relative;
+        top: 200px;
+        z-index: 0;
+    } */
+
+    .illustration-mobile,
+    .bg-pattern-mobile {
+        display: none;
+    }
+
+    .illustration-desktop,
+    .illustration-box-desktop {
+        display: block;
+    }
 }

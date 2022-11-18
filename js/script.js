@@ -30,13 +30,14 @@ const questions = [
 let heightQuestionContainer;
 let heightsVetor = [];
 
+// function to get the height value of "questions-container" and store it in a array
+// with this array we can change height value with slight transition when "question-container" is clicked
 function getHeightValue(question) {
     for (var i = 1; i <= 2; i++) {
         if (i == 1) {
             question.style.overflow = "visible";
             question.style.height = "auto";
             heightQuestionContainer = question.clientHeight + 1;
-
             heightsVetor.push(heightQuestionContainer);
 
         } else {
@@ -60,12 +61,11 @@ function listener(question, answer, span, height) {
             span.style.transform = "rotate(0)";
             question.style.overflow = "hidden";
             question.style.height = "2.75rem";
-            answer.style.color = "hsl(240, 6%, 100%)";
+            answer.style.color = "hsl(240, 6%, 50%, 0)";
         } else {
             span.style.transform = "rotate(-180deg)";
             question.style.overflow = "visible";
             answer.style.color = "hsl(240, 6%, 50%)";
-
             question.style.height = height + "px";
         }
 
