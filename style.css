@@ -23,6 +23,7 @@ main {
     border: 1px solid white;
     border-radius: 1.5em;
     background-color: white;
+    box-shadow: 0 23px 81px -27px black;
     margin: 0 auto;
     margin-bottom: 2em;
     padding: 0 1.5rem 2.5rem 1.5rem;
@@ -57,8 +58,6 @@ main {
 
 .questions-container {
     border-bottom: 1px solid hsl(240, 5%, 91%);
-    height: 2.75rem;
-    overflow: hidden;
     transition: all 0.5s;
     transform: translate(0);
 }
@@ -67,6 +66,7 @@ main {
 
 .question-content {
     color: hsl(237, 12%, 33%);
+    cursor: pointer;
     display: flex;
     font-size: 0.8rem;
     font-weight: 400;
@@ -99,13 +99,15 @@ main {
     color: orange;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 820px) {
     main {
-        width: 57.5rem;
         margin: 0 auto;
     }
 
     .card-container {
+        background-image: url(./images/bg-pattern-desktop.svg);
+        background-position: -36.125rem 65%;
+        background-repeat: no-repeat;
         padding: 4.5rem 6.375rem 5.125rem 0;
     }
 
@@ -139,6 +141,7 @@ main {
         position: relative;
         height: 22.5rem;
         width: 24.375rem;
+        z-index: 1;
     }
 
     .illustration-box-desktop {
@@ -147,14 +150,9 @@ main {
         object-position: top;
         position: relative;
         right: 120%;
+        z-index: 2;
     }
-    
-    /* .image-position::after {
-        content:  url(./images/bg-pattern-desktop.svg);
-        position: relative;
-        top: 200px;
-        z-index: 0;
-    } */
+
 
     .illustration-mobile,
     .bg-pattern-mobile {
@@ -162,7 +160,8 @@ main {
     }
 
     .illustration-desktop,
-    .illustration-box-desktop {
+    .illustration-box-desktop,
+    .bg-pattern-desktop {
         display: block;
     }
 }

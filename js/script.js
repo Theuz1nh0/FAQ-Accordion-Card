@@ -39,10 +39,9 @@ function getHeightValue(question) {
             question.style.height = "auto";
             heightQuestionContainer = question.clientHeight + 1;
             heightsVetor.push(heightQuestionContainer);
-
         } else {
             question.style.overflow = "hidden";
-            question.style.height = "2.75rem";
+            question.style.height = "3rem";
         }
     }
 }
@@ -60,7 +59,7 @@ function listener(question, answer, span, height) {
         if (styleConfirm) {
             span.style.transform = "rotate(0)";
             question.style.overflow = "hidden";
-            question.style.height = "2.75rem";
+            question.style.height = "3rem";
             answer.style.color = "hsl(240, 6%, 50%, 0)";
         } else {
             span.style.transform = "rotate(-180deg)";
