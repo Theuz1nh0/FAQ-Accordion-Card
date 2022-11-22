@@ -136,6 +136,7 @@ main {
 
     .card-content h1 {
         margin-bottom: 2rem;
+        text-align: start;
     }
 
     .image-position {
