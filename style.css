@@ -64,7 +64,8 @@ main {
 
 
 
-.question-content {
+.question-content,
+.question-content-clicked {
     color: hsl(237, 12%, 33%);
     cursor: pointer;
     display: flex;
@@ -72,7 +73,17 @@ main {
     font-weight: 400;
     justify-content: space-between;
     padding: 1rem 0 0.75rem 0;
+    transition: all 0.3s;
 }
+
+.question-content-clicked {
+    font-weight: bold;
+}
+
+.question-content:hover,
+.question-content-clicked:hover {
+    color: hsl(14, 88%, 65%);
+}   
 
 .answer-content {
     color: hsl(240, 6%, 50%, 0);
@@ -151,6 +162,11 @@ main {
         position: relative;
         right: 120%;
         z-index: 2;
+    }
+
+    .answer-content {
+        padding: 0 1rem 1rem 0;
+
     }
 
 

@@ -52,7 +52,7 @@ for (i = 0; i < questions.length; i++) {
 }
 
 
-function listener(question, answer, span, height) {
+function listener(question, answer, span, height, questionContent) {
     question.addEventListener("click", () => {
         const styleConfirm = span.style.transform == "rotate(-180deg)";
 
@@ -61,16 +61,20 @@ function listener(question, answer, span, height) {
             question.style.overflow = "hidden";
             question.style.height = "3rem";
             answer.style.color = "hsl(240, 6%, 50%, 0)";
+            questionContent.className = "question-content";
         } else {
             span.style.transform = "rotate(-180deg)";
             question.style.overflow = "visible";
             answer.style.color = "hsl(240, 6%, 50%)";
             question.style.height = height + "px";
+            questionContent.className = "question-content-clicked";
         }
 
     })
 }
 
+const questionContent = document.getElementsByClassName("question-content");
+
 for (i = 0; i < questions.length; i++) {
-    listener(questions[i].question, questions[i].answer, questions[i].span, heightsVetor[i]);
+    listener(questions[i].question, questions[i].answer, questions[i].span, heightsVetor[i], questionContent[i]);
 }
